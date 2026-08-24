@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "哔哩哔哩Web端体验增强扩展",
+  "version": "1.0",
+  "description": "一个哔哩哔哩Web端体验增强扩展。提供隐藏广告、定制化分区隐藏、IP属地显示等功能",
+  "permissions": ["storage"],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.bilibili.com/*"],
+      "css": ["hide.css"],
+      "js": ["ip_reveal.js", "content.js", "hover_block.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": ["*://*.bilibili.com/*"]
+    }
+  ]
+}

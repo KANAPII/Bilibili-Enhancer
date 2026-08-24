@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      :root {
+        --bg-color: #ffffff;
+        --text-color: #18191c;
+        --desc-color: #9499a0;
+        --border-color: #e3e5e7;
+        --card-bg: #f6f7f8;
+        --bili-pink: #fb7299;
+      }
+
+      html.dark-mode {
+        --bg-color: #17181a;
+        --text-color: #e3e5e7;
+        --desc-color: #797b80;
+        --border-color: #222222;
+        --card-bg: #1e2022;
+      }
+
+      body {
+        width: 260px;
+        margin: 0;
+        padding: 16px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      h3 {
+        margin: 0 0 16px 0;
+        font-size: 16px;
+        text-align: center;
+        color: var(--bili-pink);
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .settings-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .setting-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--card-bg);
+        padding: 12px 14px;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+      }
+
+      .setting-info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .setting-title {
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 40px;
+        height: 20px;
+      }
+
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #c0c9d4;
+        transition: 0.3s;
+        border-radius: 20px;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 2px;
+        bottom: 2px;
+        background-color: white;
+        transition: 0.3s;
+        border-radius: 50%;
+      }
+
+      input:checked + .slider {
+        background-color: var(--bili-pink);
+      }
+      input:checked + .slider:before {
+        transform: translateX(20px);
+      }
+
+      input:disabled + .slider {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      .author-container {
+        display: flex;
+        justify-content: right;
+        margin-bottom: 5px;
+      }
+      .author {
+        font-size: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3 style="margin-bottom: 0px">哔哩哔哩Web端体验增强扩展</h3>
+    <div class="author-container"><span class="author">KANAPII</span></div>
+
+    <div class="settings-container" id="settings-container"></div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

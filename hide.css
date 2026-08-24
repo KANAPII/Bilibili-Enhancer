@@ -1,0 +1,23 @@
+html.adblock-active .video-card-ad-small,
+html.adblock-active .ad-report,
+html.adblock-active .recommended-swipe,
+html.adblock-active .video-resource-list,
+html.adblock-active .video-page-game-card-small {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+html.adblock-active .bili-ad-dead {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  pointer-events: none !important;
+}
+
+.feed-card {
+  margin-top: 22px !important;
+}
