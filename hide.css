@@ -2,6 +2,7 @@ html.adblock-active .video-card-ad-small,
 html.adblock-active .ad-report,
 html.adblock-active .recommended-swipe,
 html.adblock-active .video-resource-list,
+html.adblock-active .video-page-special-card-small,
 html.adblock-active .video-page-game-card-small {
   display: none !important;
   width: 0 !important;
