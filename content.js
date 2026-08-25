@@ -136,6 +136,23 @@
         }
       }
     });
+
+    const feedCards = document.querySelectorAll(".feed-card, .bili-feed-card");
+    feedCards.forEach((card) => {
+      const liveIndicator = card.querySelector(
+        ".bili-live-card__info--living__text"
+      );
+
+      if (liveIndicator && liveIndicator.textContent.trim() === "直播中") {
+        if (settings.hideLive) {
+          card.style.setProperty("display", "none", "important");
+        } else {
+          if (!card.classList.contains("bili-ad-dead")) {
+            card.style.removeProperty("display");
+          }
+        }
+      }
+    });
   }
 
   const ipCache = {};

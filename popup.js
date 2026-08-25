@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const settingsConfig = [
-    { id: "showIP", title: "显示IP属地", default: true },
+    { id: "showIP", title: "显示评论IP属地", default: true },
     { id: "autoPlayBlock", title: "拦截鼠标悬浮播放", default: true },
     { id: "adblockEnabled", title: "隐藏广告", default: true },
     //{ id: "hidePromo", title: "隐藏推广", default: true },
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { id: "hideMovie", title: "隐藏电影推荐", default: true },
     { id: "hideComic", title: "隐藏漫画推荐", default: true },
     { id: "hideAnime", title: "隐藏番剧推荐", default: true },
-    { id: "quickBlock", title: "一键拉黑（敬请期待）", default: true },
+    { id: "quickBlock", title: "快速拉黑", default: true },
   ];
 
   const container = document.getElementById("settings-container");
