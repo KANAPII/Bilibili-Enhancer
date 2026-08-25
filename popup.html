@@ -122,6 +122,11 @@
       .author {
         font-size: 10px;
       }
+      .counter-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
     </style>
   </head>
   <body>
@@ -129,6 +134,31 @@
     <div class="author-container"><span class="author">KANAPII</span></div>
 
     <div class="settings-container" id="settings-container"></div>
+
+    <div
+      class="counter-container"
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        font-size: 13px;
+        color: var(--desc-color);
+      "
+    >
+      <span>已隐藏 </span>
+      <span
+        id="block-count-display"
+        style="
+          font-weight: bold;
+          margin: 0 4px;
+          font-size: 15px;
+          color: var(--bili-pink);
+        "
+        >0</span
+      >
+      <span> 次内容</span>
+    </div>
 
     <script src="popup.js"></script>
   </body>

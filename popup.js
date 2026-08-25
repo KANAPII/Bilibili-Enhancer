@@ -66,4 +66,25 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
+
+  function formatCount(num) {
+    if (num >= 10000) return (num / 10000).toFixed(1).replace(/\.0$/, "") + "w";
+    if (num >= 1000) return (num / 1000).toFixed(1).replace(/\.0$/, "") + "k";
+    return num.toString();
+  }
+
+  chrome.storage.local.get(["totalHiddenCount"], (res) => {
+    const count = res.totalHiddenCount || 0;
+    const displayEl = document.getElementById("block-count-display");
+    if (displayEl) displayEl.textContent = formatCount(count);
+  });
+
+  chrome.storage.onChanged.addListener((changes, namespace) => {
+    if (namespace === "local" && changes.totalHiddenCount) {
+      const displayEl = document.getElementById("block-count-display");
+      if (displayEl) {
+        displayEl.textContent = formatCount(changes.totalHiddenCount.newValue);
+      }
+    }
+  });
 });
