@@ -27,6 +27,7 @@
     hideCourse: true,
     hideSports: true,
     showIP: true,
+    hideTrending: true,
   };
 
   let localBlacklist = [];
@@ -242,6 +243,19 @@
         }
       }
       card.setAttribute("data-bl-checked", "true");
+    });
+
+    const trendingElements = document.querySelectorAll(".trending");
+    trendingElements.forEach((el) => {
+      if (settings.hideTrending) {
+        el.style.setProperty("display", "none", "important");
+        if (!el.dataset.hiddenCounted) {
+          el.dataset.hiddenCounted = "true";
+          newlyHiddenCount++;
+        }
+      } else {
+        el.style.removeProperty("display");
+      }
     });
 
     if (newlyHiddenCount > 0) {
